@@ -1,2 +1,2 @@
-peters-world
+Peters World
 ============
