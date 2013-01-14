@@ -27,7 +27,7 @@
                                         <button class="btn primary" type="submit">Sign up</button>
                                     </fieldset>
                                 </form>
-                
+                                <p><a href="index.php" class="btn btn-primary btn-warning btn-small">&raquo; back</a></p>
                             </div>
                         </div>
                     </div>
