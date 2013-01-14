@@ -12,7 +12,7 @@
         $anv = $sth->fetchAll(PDO::FETCH_COLUMN, 1);
         
         if(isset($anv[0])){
-            echo 'Success';
+            header("Location: start.php");
         }
         
     }
