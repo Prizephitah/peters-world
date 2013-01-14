@@ -1,12 +1,12 @@
 <?php
 
-    include('../View/signUpView.php');
+    include('../view/signUpView.php');
     
     if(!empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['repassword'])){
     
         if($_POST['password'] == $_POST['repassword']){
         
-            $dbh = new PDO("mysql:host=localhost; dbname=petersworld;", "root","");
+            $dbh = new PDO("mysql:host=localhost; dbname=peters-world;", "root","");
 
             $sth = $dbh->prepare('SELECT * FROM users WHERE username = ?');
                 

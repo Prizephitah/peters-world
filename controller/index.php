@@ -1,10 +1,10 @@
 <?php
 
-    include ('../View/indexView.php');
+    include ('../view/indexView.php');
 
     if(isset($_POST['username']) && isset($_POST['password'])){
-    
-        $dbh = new PDO("mysql:host=localhost; dbname=petersworld;", "root","");
+    	
+        $dbh = new PDO("mysql:host=localhost; dbname=peters-world;", "root","");
         
         $sth = $dbh->prepare('SELECT * FROM users WHERE username = ? AND password = ?');
         
