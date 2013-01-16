@@ -14,7 +14,9 @@
             $smarty->setCacheDir('/home/peter/development/peters-world/cache');
             $smarty->setCompileDir('/home/peter/development/peters-world/templates_c');
             
+            
             $smarty->display('head.tpl');
+            $smarty->display('update.tpl');
             
         }
 
