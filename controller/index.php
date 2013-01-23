@@ -12,6 +12,7 @@
         $anv = $sth->fetchAll(PDO::FETCH_COLUMN, 1);
         
         if(isset($anv[0])){
+            setcookie("login", $_POST['username'], time()+3600);
             header("Location: start.php");
         }
         

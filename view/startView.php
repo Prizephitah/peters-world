@@ -1,7 +1,5 @@
 <?php
 
-    //include ('../module/posts.php');
-
     class startView{
     
         function __construct($posts){
@@ -17,11 +15,16 @@
             $smarty->setCompileDir('/home/peter/development/peters-world/templates_c');
             
 
-            
-            $title = $posts->getTitles();
-            $text = $posts->getTexts();
+
             
             $smarty->display('head.tpl');
+            
+            if($posts->getTitles() == null)
+                $smarty->display('login.tpl');
+            
+           
+            $title = $posts->getTitles();
+            $text = $posts->getTexts();
             
             for($i = 0; $i < count($title); $i++){
                 $smarty->assign('title', $title[$i]);

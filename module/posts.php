@@ -4,9 +4,23 @@
         private $title;
         private $text;
         
-        function __construct(){
+        function __construct($user){
             
             $dbh = new PDO("mysql:host=localhost; dbname=peters-world;", "root","");
+            
+            $sth = $dbh->prepare('
+            
+                    SELECT *
+            
+                    FROM users
+            
+                    WHERE username = ?
+            
+                    ');
+            
+            $sth->execute(array($user));
+            
+            $anv = $sth->fetch();
             
             $sth = $dbh->prepare('
                 
@@ -18,7 +32,7 @@
                 
             ');
             
-            $sth->execute(array(0));
+            $sth->execute(array($anv['id']));
             
             while($row = $sth->fetch()){
                 $this->title[] = $row['title'];

@@ -14,7 +14,7 @@
                         <div class="row">
                             <div class="login-form">
                                 <h2>Login</h2>
-                                <form action="" method="post">
+                                <form action="index.php" method="post">
                                     <fieldset>
                                         <div class="clearfix">
                                             <input type="text" name="username" placeholder="Username">

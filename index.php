@@ -1,5 +1,5 @@
 <?php
 	
-echo "<a href='controller/index.php'>index</a>";
+echo "<a href='controller/start.php'>start</a>";
 
 ?>
