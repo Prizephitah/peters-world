@@ -11,9 +11,9 @@
             $sth = $dbh->prepare('SELECT * FROM users WHERE username = ?');
                 
             $sth->execute(array($_POST['username']));
-            $anv = $sth->fetchAll(PDO::FETCH_COLUMN, 1);
+            $anv = $sth->fetch();
             
-            if(isset($anv[0]))
+            if(isset($anv['username']))
                 echo 'name in use';
             else{
                 $sth = $dbh->prepare('INSERT INTO users VALUES (null, ?, ?)');

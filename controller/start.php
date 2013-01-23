@@ -1,7 +1,10 @@
 <?php
 
     include('../view/startView.php');
-
-    $view = new startView();
+    include ('../module/posts.php');
+    
+    $posts= new posts();
+    
+    $view = new startView($posts);
 
 ?>

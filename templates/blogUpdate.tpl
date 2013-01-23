@@ -6,9 +6,9 @@
 
         <div class="container">
             <br>
-            <h1>Title</h1>
+            <h1>{$title}</h1>
             <br>
-            <p>Today I have made a skiss how the blogg should look like.</p>
+            <p>{$text}</p>
             <br>
             <p class="text-info">Posted: 2013-01-14, 23:11</p>
             <p class="text-warning">Edited: Never</p>
