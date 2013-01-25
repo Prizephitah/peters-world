@@ -11,8 +11,8 @@
                 <li><a href="update.php">Update</a>
                 <li><a href="">Settings</a></li>
                 
-                <form class="navbar-search pull-right">
-                    <li><input type="text" class="search-query" placeholder="Search"></li>
+                <form class="navbar-search pull-right" action="search.php" method="post">
+                    <li><input type="text" class="search-query" placeholder="Search" name="search"></li>
                 </form>
                 
             </ul>

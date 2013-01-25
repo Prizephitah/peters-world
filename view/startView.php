@@ -26,7 +26,7 @@
             $title = $posts->getTitles();
             $text = $posts->getTexts();
             
-            for($i = 0; $i < count($title); $i++){
+            for($i = count($title)-1; $i >= 0; $i--){
                 $smarty->assign('title', $title[$i]);
                 $smarty->assign('text', $text[$i]);
                 $smarty->display('blogUpdate.tpl');

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-01-16 11:19:16
+<?php /* Smarty version Smarty-3.1.12, created on 2013-01-25 01:37:47
          compiled from "/home/peter/development/peters-world/templates/head.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:197825579850f46b2431cf01-53541956%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7b3cd7b39e30aedfbace5472be9fa940ea7a6441' => 
     array (
       0 => '/home/peter/development/peters-world/templates/head.tpl',
-      1 => 1358331555,
+      1 => 1359074144,
       2 => 'file',
     ),
   ),
@@ -32,8 +32,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 <li><a href="update.php">Update</a>
                 <li><a href="">Settings</a></li>
                 
-                <form class="navbar-search pull-right">
-                    <li><input type="text" class="search-query" placeholder="Search"></li>
+                <form class="navbar-search pull-right" action="search.php" method="post">
+                    <li><input type="text" class="search-query" placeholder="Search" name="search"></li>
                 </form>
                 
             </ul>

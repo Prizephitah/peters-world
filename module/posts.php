@@ -1,5 +1,5 @@
 <?php
-    class posts{
+    class Posts{
         
         private $title;
         private $text;

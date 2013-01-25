@@ -3,11 +3,12 @@
     include('../view/startView.php');
     include ('../module/posts.php');
     
-    $requestURI = explode('/', $_SERVER['REQUEST_URI']);
-    echo $requestURI[1];
-    echo $_COOKIE['login'];
+    if(!isset($_GET['user']) && isset($_COOKIE['login'])){
+        $loc = "Location: start.php?user=" . $_COOKIE['login'];
+        header($loc);
+    }
     
-        $posts= new posts($_GET['user']);
+    $posts= new Posts($_GET['user']);
     
     $view = new startView($posts);
 

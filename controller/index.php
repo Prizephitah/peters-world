@@ -1,19 +1,18 @@
 <?php
 
     include ('../view/indexView.php');
+    include ('../module/login.php');
 
     if(isset($_POST['username']) && isset($_POST['password'])){
     	
-        $dbh = new PDO("mysql:host=localhost; dbname=peters-world;", "root","");
+        $login = new Login($_POST['username'], $_POST['password']);
         
-        $sth = $dbh->prepare('SELECT * FROM users WHERE username = ? AND password = ?');
+        $user = $login->getUser();
         
-        $sth->execute(array($_POST['username'], $_POST['password']));
-        $anv = $sth->fetchAll(PDO::FETCH_COLUMN, 1);
-        
-        if(isset($anv[0])){
+        if(!empty($user['username'])){
             setcookie("login", $_POST['username'], time()+3600);
-            header("Location: start.php");
+            $loc = "Location: start.php?user=" . $_POST['username'];
+            header($loc);
         }
         
     }
