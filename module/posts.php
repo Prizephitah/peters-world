@@ -6,33 +6,34 @@
         
         function __construct($user){
             
-            $dbh = new PDO("mysql:host=localhost; dbname=peters-world;", "root","");
+            $dbh = new PDO(
+				"mysql:host=localhost; dbname=peters-world;",
+				"root",
+				"",
+				array(
+					PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\'',
+					PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+					PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+				)
+			);
             
             $sth = $dbh->prepare('
-            
-                    SELECT *
-            
-                    FROM users
-            
-                    WHERE username = ?
-            
-                    ');
+				SELECT `id`
+				FROM users
+				WHERE username = ?
+            ');
             
             $sth->execute(array($user));
             
-            $anv = $sth->fetch();
+            $userId = $sth->fetchColumn(0);
             
             $sth = $dbh->prepare('
-                
                 SELECT *
-
                 FROM posts
-                
                 WHERE id_users = ?
-                
             ');
             
-            $sth->execute(array($anv['id']));
+            $sth->execute(array($userId));
             
             while($row = $sth->fetch()){
                 $this->title[] = $row['title'];
